@@ -35,7 +35,7 @@ function calculateCurrentGrade(){
     var finalWeight = parseInt(document.getElementById("finalWeight").value) / 100;
 
     if((hwWeight + quizWeight + testWeight + midtWeight + finalWeight) * 100  != 100) {
-        document.getElementById("currentGradeIs").innerHTML = "ERROR: WEIGHTS OVER 100%";
+        document.getElementById("currentGradeIs").innerHTML = "ERROR: WEIGHTS NOT = 100%";
     } else {
         var currentGrade = (averageHW + averageQuiz + averageTest + averageMid) / (hwWeight + quizWeight + testWeight + midtWeight);
         console.log(currentGrade);

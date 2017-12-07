@@ -48,7 +48,6 @@ function calculateCurrentGrade(){
                 document.getElementById("currentGradeIs").innerHTML = "ERROR: INPUT UNREASONABLE";
 
             }
-
         }
     }
     return currentGrade;
@@ -132,6 +131,11 @@ function calculateGradeNeeded(nowGrade){
     var gradeNeeded = ((goalGrade - (currentGrade * allWeights)) / finalWeight) * 100;
 
     console.log(gradeNeeded);
-    document.getElementById("finalGradeNeeded").innerHTML = "You need a " +gradeNeeded.toPrecision(4) + " on the final to get a " + goalGrade.toPrecision(4) * 100 + " overall. Good luck!";
+
+    if(isNaN(currentGrade) || currentGrade > 300 || currentGrade < 0 || ((hwWeight + quizWeight + testWeight + midtWeight + finalWeight) * 100  != 100)) {
+        document.getElementById("finalGradeNeeded").innerHTML = "ERROR";
+    } else {
+        document.getElementById("finalGradeNeeded").innerHTML = "You need a " +gradeNeeded.toPrecision(4) + " on the final to get a " + goalGrade.toPrecision(4) * 100 + " overall. Good luck!";
+    }
     return gradeNeeded;
 }

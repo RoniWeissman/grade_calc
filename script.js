@@ -43,7 +43,7 @@ function calculateCurrentGrade(){
             document.getElementById("currentGradeIs").innerHTML = "ERROR: INPUT NaN";
         } else {
             if(currentGrade >= 0 && currentGrade < 300) {
-                document.getElementById("currentGradeIs").innerHTML = "You have a " +currentGrade.toPrecision(4) + " in this class!";
+                document.getElementById("currentGradeIs").innerHTML = "You have a " +currentGrade.toPrecision(4) + "% in this class!";
             } else {
                 document.getElementById("currentGradeIs").innerHTML = "ERROR: INPUT UNREASONABLE";
 
@@ -135,7 +135,7 @@ function calculateGradeNeeded(nowGrade){
     if(isNaN(currentGrade) || currentGrade > 300 || currentGrade < 0 || ((hwWeight + quizWeight + testWeight + midtWeight + finalWeight) * 100  != 100)) {
         document.getElementById("finalGradeNeeded").innerHTML = "ERROR";
     } else {
-        document.getElementById("finalGradeNeeded").innerHTML = "You need a " +gradeNeeded.toPrecision(4) + " on the final to get a " + goalGrade.toPrecision(4) * 100 + " overall. Good luck!";
+        document.getElementById("finalGradeNeeded").innerHTML = "You need a " +gradeNeeded.toPrecision(4) + "% on the final to get a " + goalGrade.toPrecision(4) * 100 + "% overall. Good luck!";
     }
     return gradeNeeded;
 }
